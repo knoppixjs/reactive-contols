@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+.app-input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+  font-size: 1.5em;
+}
+
+.calcinput-input::before {
+  content: 'CalcInput';
+  font-weight: bold;
+}
+
+.numericinput-input::before {
+  content: 'NumericInput';
+  font-weight: bold;
+}
+
+.app-input > div:nth-child(1) {
+  display: flex;
+}
+
+.app-input > div:nth-child(1) > span {
+  background-color: gray;
+}
+
+.app-input > div input {
+  width: 100%;
+  height: 50px;
+  font-size: 1.5em;
+}
+
+.app-input.numericinput-input > div:nth-child(1) input,
+.app-input.calcinput-input > div:nth-child(1) input {
+  width: 80%;
+}
+
+.app-input.numericinput-input > div:nth-child(1) span,
+.app-input.calcinput-input > div:nth-child(1) span {
+  width: 20%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.app-input.valid > div:nth-child(1) > input {
+  border: 3px solid gray;
+}
+
+.app-input.valid > div:nth-child(1) > input:focus {
+  border: 3px solid blue;
+}
+
+.app-input.invalid > div:nth-child(1) > input {
+  border: 3px solid #ffc7c7; 
+}
+
+.app-input.invalid > div:nth-child(1) > input:focus {
+  border: 3px solid red; 
+}
+
+.app-input > div:nth-child(2) span {
+  display: block;
+  line-height: 1.1;
+  padding: 5px 0;
+}
+
+.app-input > div:nth-child(2) span:nth-child(1)::before {
+  content: 'Value: ';
+  font-weight: bold;
+}
+
+.app-input > div:nth-child(2) span:nth-child(2)::before {
+  content: 'Text: "';
+  font-weight: bold;
+}
+
+.app-input > div:nth-child(2) span:nth-child(2)::after {
+  content: '"';
+  font-weight: bold;
+}
+
+.app-input > div:nth-child(2) span:nth-child(3)::before {
+  content: 'Valid: ';
+  font-weight: bold;
+}
+
+.app-input.custom > div:nth-child(1) > input {
+  background-color: yellow;
+}
+
+.app-input.custom.valid > div:nth-child(1) > input {
+  border: 3px solid gray;
+}
+
+.app-input.custom.valid > div:nth-child(1) > input:focus {
+  border: 3px solid green;
+}
+
+.app-input.custom.invalid > div:nth-child(1) > input {
+  border: 3px solid #ffc7c7; 
+}
+
+.app-input.custom.invalid > div:nth-child(1) > input:focus {
+  border: 3px solid red; 
+}
+
+.app-input > div:nth-child(2) > input {
+  width: 80%;
+  margin-left: 20%;
+}
+
+.app-input > div:nth-child(2) b,
+.app-input > div:nth-child(2) i {
+  width: 20%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  top: 50px;
+  font-size: 20px;
+  font-style: normal;
+  background-color: gray;
+  border: 1px solid black;
+  font-weight: normal;
+}
+
+.app-input > div:nth-child(2) i::before {
+  content: 'Set text';
+}
+
+.app-input > div:nth-child(2) b::before {
+  content: 'Set value';
+}
+
+.wrapper {
+  display: flex;
+}
+
+.wrapper > div {
+  width: 50%;
+}
+
+#destroy {
+  font-size: 20px;
+  margin-left: 10px;
+  padding: 5px;
+  cursor: poiner;
+}
+
+h2 {
+  font-size: 40px;
+  padding: 5px 10px;
+}
+
+@media only screen and (max-width: 650px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  
+  .wrapper > div {
+    width: 95%;
+  }
+}
